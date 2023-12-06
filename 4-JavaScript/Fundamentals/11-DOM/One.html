@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+
+      <div id="parent1" class="firstParent">
+            <div class="child">Animal</div>
+            <div class="child">Striver</div>
+            <div class="child">Chai aur code</div>
+      </div>
+
+      <div class="parent2">
+            <div class="child">Dog(Kutta)</div>
+            <div class="child">Cat(Billi)</div>
+            <div class="child">Leopard(chita-bagh)</div>
+      </div>
+
+      <ul class="counting">
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+      </ul>
+
+      <div class="boxes">
+            <ol class="fruits">
+                  <li>Mango</li>
+                  <li>Banana</li>
+                  <li>Pineapple</li>
+                  <li style="display: none;">jack fruits</li>
+            </ol>
+      </div>
+      <div class="boxes">
+            <ol class="fishes">
+                  <li>Rohu</li>
+                  <li>Bhakur</li>
+                  <li>Galei</li>
+            </ol>
+      </div>
+      <div class="boxes">
+            <ol class="places">
+                  <li>Maa Mangala</li>
+                  <li>Pir Jahania</li>
+                  <li>Konark</li>
+            </ol>
+      </div>
+</body>
+<script>
+
+      // We can select any Element by using their idName
+      const getAnyEle = document.getElementById('parent1')
+      // console.log(getAnyEle);
+      // Manipulating that element
+      getAnyEle.style.backgroundColor = '#214321'
+      getAnyEle.style.padding = '13px'
+
+
+
+      // Manipulating through class name - Gives HTMLCollection
+      const getAnotherELe = document.getElementsByClassName('parent2')
+      // console.log(getAnotherELe);
+      
+
+      // Getting information about any element
+      // console.log(document.getElementById('parent1').id);
+      // console.log(document.getElementById('parent1').className);
+      // Setting attribute to element
+      document.getElementById('parent1').setAttribute('title', 'First div')
+      // console.log(document.getElementById('parent1').getAttribute('title'));
+
+
+
+
+      /*      Query Selector
+         - Takes arguments as CSS selectors
+         - It will gives only the first child
+      */
+      const list = document.querySelector('li')
+      // console.log(list);
+      list.style.backgroundColor = "Red"
+      list.style.padding = "12px"
+      list.style.borderRadius = "12px"
+      list.style.marginBottom = "10px"
+
+      const secondDiv = document.querySelector('.parent2')
+      // console.log(secondDiv);
+      secondDiv.style.marginTop = "10px"
+      secondDiv.style.backgroundColor = "grey"
+      secondDiv.style.padding = "10px"
+
+      const data = document.querySelector('.fruits')
+      // console.log(data);
+      // console.log(data.innerText);      // Fetch only displayed value
+      // console.log(data.textContent);    // Fetch all Text, even if it is hidden by styling
+      // console.log(data.innerHTML);      // Whole things of an element
+
+
+
+
+
+      /*      Query Selector All
+          - It also takes argument as selectors
+          - It will select all element with that perticular selector
+          - It gives a NodeList, But by using the index we can manipulate any element returned by the this selector.
+      */
+
+      const someDivs = document.querySelectorAll('.boxes')
+      // console.log(someDivs);
+
+      for(let i = 0; i<someDivs.length; i++) {
+            someDivs[i].style.backgroundColor = "chocolate"
+            someDivs[i].style.padding = "10px"
+            someDivs[i].style.marginBottom = "10px"
+            someDivs[i].style.borderRadius = "10px"
+      }
+
+</script>
+</html>

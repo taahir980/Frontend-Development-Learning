@@ -1,0 +1,97 @@
+
+/*                Box Model
+
+    - The box model is a fundamental concept in CSS, which describes how elements on a web page are rendered and how their dimensions are calculated. 
+
+    - Each HTML element can be thought of as a rectangular box with four main components: content, padding, border, and margin. 
+
+    - These components surround the actual content of the element.
+
+
+    1) Content:
+    - The actual content of the element, such as text, images, or other media.
+    - It is defined by the width and height properties.
+
+    2) Padding:
+    - The space between the content and the element's border.
+    - It is defined by the padding property and can be set independently for each side (top, right, bottom, left).
+
+    3) Border:
+    - The border surrounds the padding of the element.
+    - It is defined by the border property and can include properties like border-width, border-style, and border-color.
+
+    4) Margin:
+    - The space outside the element's border, creating space between adjacent elements.
+    - It is defined by the margin property and can be set independently for each side.
+
+     Total Width = Content Width + Padding + Border Width + Margin
+     Simillar in case of height.
+
+*/
+
+/*                 Sizing
+
+      * Intrinsic Sizing:-
+      - Handled by the browsers in best possible way to show case HTML elements properly 
+      - Every element have default sizing added by the Browsers
+
+      * Extrinsic Sizing:- 
+      - Defined by the user according to their need or Style
+*/
+
+
+#box_model > div{
+      width: 50%;
+      height: min-content;
+      margin-bottom: 10px;
+}
+.myDiv1 {
+      /* Box Outside Space */
+      margin: 10px;
+      border: 2px solid black;
+}
+.myDiv2 {
+      /* Box Inside Space */
+      padding: 20px;
+      border: 2px solid red;
+}
+.myDiv3 {
+      border: 2px solid blue;
+}
+
+
+
+
+
+.parent > div, p {
+      text-align: center;
+      text-transform: uppercase;
+}
+.parent {
+      background-color: #7e2f2f;
+      margin: 10px;
+      border: 20px solid rgb(8, 92, 202);
+      
+}
+.child {
+      background-color: #930606;
+      border: 10px solid black;
+      margin: 30px;
+}
+.grand-ch {
+      background-color: #ff0000;
+      padding: 20px;
+}
+.grand_grand-ch {
+      background-color: #ff5e5e;
+      height: 200px;
+}
+
+
+.third {
+      width: 200px;
+      height: 200px;
+      padding: 10px;
+      margin: 10px;
+      border: 5px solid black;
+}

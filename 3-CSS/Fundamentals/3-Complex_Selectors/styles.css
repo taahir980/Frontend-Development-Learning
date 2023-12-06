@@ -1,0 +1,81 @@
+body {
+      background-color: #575353;
+}
+
+body > div {
+      background-color: #000;
+      color: #fff;
+      padding: 5px;
+      margin-bottom: 10px;
+}
+
+/*                   Combinators 
+
+      - Combining CSS Selectors
+      - Selectors which use combinators to help you select items based on their position in the document. 
+*/
+
+
+
+
+/*  1) Child Combinators
+      - Applies styles to direct child of the parent element.
+*/
+
+.first_div > p {
+      font-family: sans-serif;
+}
+
+
+
+
+/*  2) Descendant combinators
+      - Applies styles to Descendant of the parent element.
+      - How much deep the elements are nested, that doesn't matter until it's a Descendant.
+*/
+
+.second_div div{
+      background-color: aqua;
+      padding: 5px;
+      margin-bottom: 10px;
+}
+
+
+
+
+/*     3) Next Sibling    */
+
+.third_div > h2 + p {
+      background-color: #575353;
+}
+
+/*  3.1) Next sibling combinators  
+      - You can look for an element that immediately follows another element by using a + character in your selector.
+*/
+
+.fourth_div * + * {
+      border-top: 10px solid rgb(206, 100, 118);
+}
+
+
+
+
+/*  5) Subsequent - sibling combinators
+      - The subsequent sibling combinator (~) in CSS is used to select all elements that are siblings of a specified element and appear after it in the HTML structure.     
+*/
+
+.fifth_div h2 ~ p {
+      color: red;
+}
+
+
+/*    Compound Selectors 
+    - A compound selector is a sequence of simple selectors that are not separated spaces, Where all are true.
+    - A compound selector represents a set of simultaneous conditions on a single element.
+    - universal or type can be selected one at a time & always comes first in chaining or compounding.
+*/
+
+div.sixth_div[title] {
+      background-color: #fff;
+      color: #000;
+}

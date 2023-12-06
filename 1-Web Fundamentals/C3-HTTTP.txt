@@ -1,0 +1,11 @@
+HTTP :-
+
+      - It is used to transfer data between client (such a Browser) and a server (such as a website).
+
+      - **HTTPS** is an encrypted version of HTTP that is used to provide secure communication between client and server.
+
+      - It is a TCP/IP-based application layer communication protocol that standardizes how clients and servers communicate with each other.
+
+      - It defines how content is requested and transmitted across the internet.
+
+      - HTTP itself depends on TCP/IP to get requests and responses between the client and server.
