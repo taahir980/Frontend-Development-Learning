@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+      <h1>Chai Aur Javascript</h1>
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+</body>
+<script>
+      //  setInterval & clearInterval
+
+      // const interval = setInterval(function(){
+      //       console.log("Tahir", Math.floor(Math.random() * 10) + 1);
+      // }, 1000);
+
+      // clearInterval(interval);
+
+      function printNonstop(str){
+            console.log(`${str} Tahir`, Math.floor(Math.random() * 10) + 1);
+      }
+
+      // It also takes another parameter
+      // setInterval(printNonstop, 1000, "Hii");
+
+      let intervalId;
+      document.querySelector('#start').addEventListener('click', function(){
+           intervalId = setInterval(printNonstop, 1000, "Hello");
+      });
+
+      document.querySelector('#stop').addEventListener('click', function(){
+            clearInterval(intervalId);
+      });
+
+</script>
+</html>

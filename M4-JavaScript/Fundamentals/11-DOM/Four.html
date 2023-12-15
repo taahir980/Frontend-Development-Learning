@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>DOM 3</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+
+      <ul class="spices">
+            <li>Turmeric (Haldi)</li>
+      </ul>
+</body>
+<script>
+
+      // Adding items to the list
+      function addSpices(spiceName) {
+            const list = document.createElement('li');
+            // This way of adding element is not optimal approach, Because it traverse the whole document
+            list.innerHTML = `${spiceName}`;
+            document.querySelector('.spices').appendChild(list);
+      }
+      addSpices("Chilli (Mirchi)");
+      addSpices("Coriander (Dhaniya)");
+
+
+      // Optimized Approach
+      function addMoreSpices(spiceName) {
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(spiceName));
+            document.querySelector('.spices').appendChild(li);
+      }
+      addMoreSpices("Chicken Masala");
+
+</script>
+</html>

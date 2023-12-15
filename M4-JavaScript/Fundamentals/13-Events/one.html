@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+
+            <li><img width="200px" id="prayer1" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+
+            <!-- Onclick (1st Approach)
+                  - It is the one way we can add events inline, to a perticular element.
+                  - It is not the best thing to do, because it is not scalable.
+            -->
+            <li><img width="200px" id="prayer2" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"  alt="" onclick="alert('Prayer2 image is clicked')"></li>
+
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+
+      /* Onclick (2nd Approach)
+            - There is no problem in it, it is not the best way to add events, because it is limited to only click events.
+      */
+      // document.getElementById('owl').onclick = function () {
+      //       alert("Owl is clicked");
+      // }
+
+      // To-Do (Pending)
+      // type, timestamp, defaultPrevented
+      // target, toElement, srcElement, currentTarget,
+      // clientX, clientY, screenX, screenY
+      // altkey, ctrlkey, shiftkey, keyCode
+
+
+      /*  Best Approach
+            - addEventListner comes with lots of events inside the system.
+      */
+
+      // document.getElementById('river').addEventListener('click', function(){
+      //       alert('River image is clicked');
+      // });
+
+      /*   'eventType' -> which type of event
+            callback function
+            function parameter -> event Object
+            true / false(default)
+      */
+      // document.getElementById('photoshop').addEventListener('click', function(eventObj){
+      //       console.log(eventObj);
+      // });
+
+      /* Event Propagation (Bubbling Up) - ( child -> parent )
+            - In the below, we added event to parent element and also to the child element.
+            - When we click child, who is going to click first parent or child ?
+            - In bubbling first the child is clicked, then the parent.
+
+      */
+
+      // document.getElementById('images').addEventListener('click', function(){
+      //       console.log('Image list is clicked');
+      // }, false);
+      
+      // document.getElementById('japan').addEventListener('click', function(e){
+      //       console.log('Japan is Clicked');
+      // }, false);
+
+
+      //  Capturing Mode (Parent -> child)
+
+      // document.getElementById('images').addEventListener('click', function(){
+      //       console.log('Image list is clicked');
+      // }, true);
+
+      // document.getElementById('prayer1').addEventListener('click', function(e){
+      //       console.log('Prayer1 image is clicked');
+      // }, true);
+
+
+      // Prevent Default Behaviour
+
+      document.getElementById('images').addEventListener('click', function(){
+            console.log('Image list is clicked');
+      });
+
+      document.getElementById('google').addEventListener('click', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            console.log("Google link is clicked");
+            console.log(e.target.parentNode);
+      });
+
+      // Remove images inside the list item
+      document.getElementById('images').addEventListener('click', function(e){
+            console.log(e.target.parentNode);
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+      });
+
+</script>
+</html>

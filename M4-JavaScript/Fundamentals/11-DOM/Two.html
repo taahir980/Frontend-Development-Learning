@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>DOM 2</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+      
+      <ul id="months">
+            <li class="name1">January <span>31</span> </li><li class="name2">February <span>28</span></li><li class="name3">March</li><li class="name4">April</li><li class="name5">May</li>
+      </ul>
+</body>
+<script>
+
+      const parent = document.querySelector('#months');
+      // console.log(parent);
+
+      //Fetch all childrens in HTML-Collection
+      // console.log(parent.children);
+
+      for(let i = 0; i<parent.children.length; i++) {
+            // console.log(parent.children[i].innerHTML);
+            parent.children[i].style.backgroundColor = "black"
+            parent.children[i].style.marginBottom = "5px"
+            parent.children[i].style.padding = "8px"
+      }
+
+      // console.log(parent.firstElementChild);
+      // console.log(parent.lastElementChild);
+
+      // Finding out parent and next sibling elements.
+      const monthOne = document.querySelector('.name1');
+      // console.log(monthOne);
+      // console.log(monthOne.parentElement);
+      // console.log(monthOne.nextElementSibling);
+
+      
+
+      /* Interesting thing is that, How many child node it will give you ?
+            - Here every line break is counted as one i.e text node.
+            - And then each element
+      */
+      console.log("Nodes : ", parent.childNodes);
+
+</script>
+</html>

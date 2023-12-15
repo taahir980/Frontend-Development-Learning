@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+      <h1>Learning Javascript</h1>
+      <button id="stop">Stop Change</button>
+      <p>Click the above button if you don't want to change the heading, before it will change.</p>
+</body>
+<script>
+      
+      // setTimeout & clearTimeout
+
+      // setTimeout(function(){
+      //       document.querySelector('h1').innerHTML = "I changed the Heading";
+      //       console.log("Work Done");
+      // }, 3000);
+
+      function changetext(){
+            document.querySelector('h1').innerHTML = "I changed the Heading";
+            console.log("Changing Successful");
+      }
+
+      const changeMe = setTimeout(changetext, 3000);
+
+      document.querySelector('#stop').addEventListener('click', function(){
+            // This event will stop the above setTime out execution
+            clearTimeout(changeMe);
+            console.log('Stopped');
+      });
+
+</script>
+</html>
