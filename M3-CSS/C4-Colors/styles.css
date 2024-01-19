@@ -1,0 +1,38 @@
+* {
+      padding: 20px;
+      border-radius: 6px;
+}
+body {
+      background-color: #212121;
+      color: #fff;
+}
+p  {
+      /* RGB - (Red, Green, Blue)
+            - Each color parameter defines the intensity of the color.
+            - (0, 0, 0) -> Black.
+            - (255, 255, 255) -> white.
+      */
+      color: rgb(247, 214, 218);
+
+      /* RGBA - ( A -> Alpha Channel )
+            - It is an extension of RGB color values with an alpha channel - which specifies the opacity for a color.
+            - The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all):
+      */
+      background-color: rgba(0, 255, 89, 0.5);
+}
+
+article {
+
+      /* Hex Values
+            - A hexadecimal color is specified with: #RRGGBB, where the RR (red), GG (green) and BB (blue) hexadecimal integers specify the components of the color.
+            - #000000 - Black or #000
+            - #ffffff - White or #fff
+      */
+      color: #fff3f3;
+
+      /* 3 Digit HEX Value
+            - The 3-digit hex code is a shorthand for some 6-digit hex codes.
+            - The 3-digit hex code can only be used when both the values (RR, GG, and BB) are the same for each component. So, if we have #ff00cc, it can be written like this: #f0c.
+      */
+      background-color: #95b;  /* #9955bb */
+}

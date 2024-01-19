@@ -1,0 +1,135 @@
+
+
+/*          Universal Selector 
+      - Matches any elments in the Document 
+*/
+
+* {
+      background-color: aquamarine;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      padding: 10px;
+}
+
+
+
+
+
+            /* Simple Selectors */
+
+
+
+/*           Type Selector 
+      - Matches HTML elements directly 
+*/
+
+section {
+      color: #fff;
+      background-color: #e15656;
+}
+
+
+
+
+
+
+/*                  Class Selector
+      - Used to select multiple elements at the same time
+      - An element can have multiple class at the same time 
+      - Class name can't start with number & special character.
+*/
+
+.my_class {
+      background-color: #7da34e;
+      font-size: 30px;
+}
+
+
+
+
+
+
+/*                    ID Selector
+      - An element with an id attribute should be the only element on that page with that ID value.
+      - Elements can't have multiple id name at the same time like classes.
+      - Multiple element can have same ID name, works fine like classes, but it not recommended.
+      - ID name can't start with number & special character.
+*/
+
+#my_id {
+      background-color:#9adb4b;
+}
+
+
+
+
+
+
+
+/*                  Attribute Selector
+      - We can select an element by their Attribute or Attribute along with their value, But it must be wrapped using square bracket [].
+      - By default the attribute vlaue is case-sensitive, But we can change it to insensitive.
+*/
+
+
+/* By using Only Attribute name */
+
+[title] {
+      color: #6c6c6c;
+}
+
+
+/* With value (Default - Case Sensitive) */
+
+[title = 'Normal Div' ] {             
+      height: 220px;
+      background-color: #fff;
+}
+
+/* Case Insensitive - i */
+
+[title = 'normal div 2' i] {
+      height: 220px;
+      background-color: #9f4b4b;
+}
+
+/* Sensitive */
+
+[title = 'normal div 3' s] {
+      height: 220px;
+      background-color: #d50000;
+}
+
+
+/* Along with case operators, We have access to operators that match portions of strings inside attribute values. */
+
+/* A href that contains "example.com" */
+
+[href*='Google.com'] {
+      color: red;
+}
+
+/* A href that starts with https */
+
+[href^='https'] {
+      color: green;
+}
+
+/* A href that ends with .in */
+
+[href$='.in'] {
+      color: rgb(16, 31, 31);
+}
+
+
+
+
+
+/*           Grouping Selectors
+      - We can group multiple selectors at the same time by separating them with commas
+      
+*/
+
+header, section, div, a {
+      color: #141414
+}
